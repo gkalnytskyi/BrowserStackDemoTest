@@ -33,6 +33,7 @@ namespace BrowserStackDemoTest.Support
             chromeOptions.AddArgument("start-maximized");
 
             var chromeDriver = new ChromeDriver(chromeDriverService, chromeOptions);
+            chromeDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
 
             return chromeDriver;
         }

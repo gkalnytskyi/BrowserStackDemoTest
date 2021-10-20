@@ -18,10 +18,12 @@ namespace BrowserStackDemoTest.Support
             //builder.RegisterType<BrowserDriver>().AsSelf().SingleInstance();
             builder.RegisterType<BrowserDriver>().AsSelf().InstancePerLifetimeScope();
 
+            builder.RegisterType<TestContext>().AsSelf().InstancePerLifetimeScope();
+
             builder.RegisterTypes(
                 typeof(TestDependencies).Assembly.GetTypes().
                     Where(t => Attribute.IsDefined(t, typeof(BindingAttribute))).ToArray()).
-                InstancePerDependency();
+                InstancePerLifetimeScope();
 
             return builder;
         }
