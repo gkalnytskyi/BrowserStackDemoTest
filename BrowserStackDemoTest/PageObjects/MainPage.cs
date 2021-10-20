@@ -10,6 +10,8 @@ namespace BrowserStackDemoTest.PageObjects
         {
         }
 
+        public IWebElement Orders => WebDriver.FindElement(By.Id("orders"));
+
         // Products
         public IEnumerable<ShelfItemComponent> ProductsForSale =>
             WebDriver.FindElements(By.ClassName("shelf-item")).

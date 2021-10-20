@@ -16,3 +16,5 @@ Scenario: Navigate, select, buy and check
         | State     | ND                |
         | PostCode  | 00000             |
     When they submit the order
+    And they checked Orders page
+    Then they can see their order
