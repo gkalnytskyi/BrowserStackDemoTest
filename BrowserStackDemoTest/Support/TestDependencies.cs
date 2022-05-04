@@ -15,8 +15,9 @@ namespace BrowserStackDemoTest.Support
             // create container with the runtime dependencies
             var builder = new ContainerBuilder();
 
-            //builder.RegisterType<BrowserDriver>().AsSelf().SingleInstance();
-            builder.RegisterType<BrowserDriver>().AsSelf().InstancePerLifetimeScope();
+            // Both registration variants now quit chrome driver correctly.
+            builder.RegisterType<BrowserDriver>().AsSelf().SingleInstance();
+            //builder.RegisterType<BrowserDriver>().AsSelf().InstancePerLifetimeScope();
 
             builder.RegisterType<TestContext>().AsSelf().InstancePerLifetimeScope();
 
